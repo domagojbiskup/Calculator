@@ -49,15 +49,11 @@ class ViewController: UIViewController {
                 displayLabel.text = numValue
                 isFinishedTypingNumber = false
             } else {
-                if numValue == "." {
-                    let isInt = floor(displayValue) == displayValue
-                    if !isInt {
-                        return
-                    }
+                if numValue == "." && displayLabel.text!.contains(".") {
+                    return
                 }
                 displayLabel.text = displayLabel.text! + numValue
             }
         }
     }
 }
-
